@@ -552,24 +552,24 @@
 <li>No return behavior</li>
 </ul>
 
-<h2 id="onplantgather">OnPlantGather</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlantGather</span><span class="p">(</span><span class="n">PlantEntity</span> <span class="n">plant</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<h2 id="oncropgather">OnCropGather</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCropGather</span><span class="p">(</span><span class="n">PlantEntity</span> <span class="n">plant</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlantGather works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCropGather works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnPlantGather</span><span class="p">(</span><span class="n">plant</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"OnPlantGather works!"</span><span class="p">)</span>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnCropGather</span><span class="p">(</span><span class="n">plant</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"OnCropGather works!"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">OnPlantGather</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">plant</span><span class="p">,</span> <span class="nx">item</span><span class="p">,</span> <span class="nx">player</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">print</span><span class="p">(</span><span class="s2">"OnPlantGather works!"</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="nx">OnCropGather</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">plant</span><span class="p">,</span> <span class="nx">item</span><span class="p">,</span> <span class="nx">player</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"OnCropGather works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnPlantGather</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plant</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">"OnPlantGather works!"</span>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnCropGather</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plant</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"OnCropGather works!"</span>
 </code></pre>
 
 <ul>
