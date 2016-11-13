@@ -72,50 +72,50 @@
 <li>Returning true overrides default behavior</li>
 </ul>
 
-<h2 id="canusedoor">CanUseDoor</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseDoor</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseLock</span> <span class="n">door</span><span class="p">)</span>
+<h2 id="canuselock">CanUseLock</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseLock</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseLock</span> <span class="n">@lock</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseDoor works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseLock works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">CanUseDoor</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">door</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"CanUseDoor works!"</span><span class="p">)</span>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">CanUseLock</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">lock</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"CanUseLock works!"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
-<pre class="highlight coffeescript"><code><span class="na">CanUseDoor</span><span class="o">:</span> <span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">door</span><span class="p">)</span> <span class="o">=&gt;</span>
-    <span class="nx">print</span> <span class="s">"CanUseDoor works!"</span>
+<pre class="highlight coffeescript"><code><span class="na">CanUseLock</span><span class="o">:</span> <span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">lock</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="nx">print</span> <span class="s">"CanUseLock works!"</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">CanUseDoor</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">door</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">print</span><span class="p">(</span><span class="s2">"CanUseDoor works!"</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="nx">CanUseLock</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">lock</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"CanUseLock works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">CanUseDoor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">door</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">"CanUseDoor works!"</span>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">CanUseLock</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">lock</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"CanUseLock works!"</span>
 </code></pre>
 
 <ul>
-<li>Called when the player tries to use a locked door</li>
-<li>Returning true allows door usage, nothing will by default will allow door usage, returning anything else will reject door usage</li>
+<li>Called when the player tries to use a locked entity</li>
+<li>Returning true bypasses lock handling, nothing will by default will allow normal handling, returning anything else will reject lock usage</li>
 </ul>
 
-<h2 id="canusedoor">CanUseDoor</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseDoor</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">CodeLock</span> <span class="n">door</span><span class="p">)</span>
+<h2 id="canuselock">CanUseLock</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseLock</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">CodeLock</span> <span class="n">@lock</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseDoor works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseLock works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">CanUseDoor</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">door</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"CanUseDoor works!"</span><span class="p">)</span>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">CanUseLock</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">lock</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"CanUseLock works!"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">CanUseDoor</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">door</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">print</span><span class="p">(</span><span class="s2">"CanUseDoor works!"</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="nx">CanUseLock</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">lock</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"CanUseLock works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">CanUseDoor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">door</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">"CanUseDoor works!"</span>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">CanUseLock</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">lock</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"CanUseLock works!"</span>
 </code></pre>
 
 <ul>
@@ -123,24 +123,24 @@
 <li>Returning true allows door usage, nothing will by default will allow door usage, returning anything else will reject door usage</li>
 </ul>
 
-<h2 id="canusedoor">CanUseDoor</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseDoor</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">KeyLock</span> <span class="n">door</span><span class="p">)</span>
+<h2 id="canuselock">CanUseLock</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseLock</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">KeyLock</span> <span class="n">@lock</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseDoor works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseLock works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">CanUseDoor</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">door</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"CanUseDoor works!"</span><span class="p">)</span>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">CanUseLock</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">lock</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"CanUseLock works!"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">CanUseDoor</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">door</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">print</span><span class="p">(</span><span class="s2">"CanUseDoor works!"</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="nx">CanUseLock</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">lock</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"CanUseLock works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">CanUseDoor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">door</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">"CanUseDoor works!"</span>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">CanUseLock</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">lock</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"CanUseLock works!"</span>
 </code></pre>
 
 <ul>
@@ -189,7 +189,7 @@
     <span class="nx">print</span><span class="p">(</span><span class="s2">"OnDoorClosed works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnDoorClosed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">door</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnDoorClosed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lock</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
     <span class="k">print</span> <span class="s">"OnDoorClosed works!"</span>
 </code></pre>
 
@@ -214,7 +214,7 @@
     <span class="nx">print</span><span class="p">(</span><span class="s2">"OnDoorOpened works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnDoorOpened</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">door</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnDoorOpened</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lock</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
     <span class="k">print</span> <span class="s">"OnDoorOpened works!"</span>
 </code></pre>
 
