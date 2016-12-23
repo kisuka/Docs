@@ -70,11 +70,11 @@
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">code</span> <span class="p">!=</span> <span class="m">200</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Nickname}"</span><span class="p">);</span>
+                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Name}"</span><span class="p">);</span>
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
 
-            <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Google answered for {player.Nickname}: {response}"</span><span class="p">);</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Google answered for {player.Name}: {response}"</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -128,10 +128,10 @@
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">code</span> <span class="p">!=</span> <span class="m">200</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Nickname}"</span><span class="p">);</span>
+                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Name}"</span><span class="p">);</span>
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="nf">Puts</span><span class="p">(</span><span class="s">"Google answered for "</span> <span class="p">+</span> <span class="n">player</span><span class="p">.</span><span class="n">Nickname</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">response</span><span class="p">);</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="s">"Google answered for "</span> <span class="p">+</span> <span class="n">player</span><span class="p">.</span><span class="n">Name</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">response</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -171,11 +171,11 @@
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">code</span> <span class="p">!=</span> <span class="m">200</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Nickname}"</span><span class="p">);</span>
+                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Name}"</span><span class="p">);</span>
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
 
-            <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Google answered for {player.Nickname}: {response}"</span><span class="p">);</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Google answered for {player.Name}: {response}"</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -215,10 +215,10 @@
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">code</span> <span class="p">!=</span> <span class="m">200</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Nickname}"</span><span class="p">);</span>
+                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Name}"</span><span class="p">);</span>
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="nf">Puts</span><span class="p">(</span><span class="s">"Google answered for "</span> <span class="p">+</span> <span class="n">player</span><span class="p">.</span><span class="n">Nickname</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">response</span><span class="p">);</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="s">"Google answered for "</span> <span class="p">+</span> <span class="n">player</span><span class="p">.</span><span class="n">Name</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">response</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
