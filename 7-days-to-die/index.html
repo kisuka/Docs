@@ -574,11 +574,11 @@
 <span class="p">}</span>
 </code></pre>
 
-          <h1 id="plugin-api">Plugin API</h1>
+          <h1 id="plugin-calling">Plugin Calling</h1>
 
 <p>Oxide allows you to expose methods in your plugin and make them available to other plugins. This allows you to access objects or properties from other plugins without having to replicate functionality yourself.</p>
 
-<h2 id="exposing-an-api-method">Exposing an API method</h2>
+<h2 id="exposing-a-plugin-39-s-method">Exposing a plugin&rsquo;s method</h2>
 <pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicStuff"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)]</span>
@@ -587,13 +587,13 @@
     <span class="k">class</span> <span class="nc">EpicStuff</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
     <span class="p">{</span>
         <span class="c1">// Plugin methods can be a simple bool that is returned
-</span>        <span class="k">public</span> <span class="kt">bool</span> <span class="nf">GetReturn</span><span class="p">()</span>
+</span>        <span class="kt">bool</span> <span class="nf">GetReturn</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="c1">// Plugin methods can take parameters and return simple types
-</span>        <span class="k">public</span> <span class="kt">string</span> <span class="nf">TakeParam</span><span class="p">(</span><span class="kt">string</span> <span class="n">param</span><span class="p">,</span> <span class="kt">int</span> <span class="n">secondParam</span><span class="p">)</span>
+</span>        <span class="kt">string</span> <span class="nf">TakeParam</span><span class="p">(</span><span class="kt">string</span> <span class="n">param</span><span class="p">,</span> <span class="kt">int</span> <span class="n">secondParam</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="p">==</span> <span class="s">"first parameter"</span><span class="p">)</span> <span class="k">return</span> <span class="n">param</span><span class="p">;</span>
             <span class="k">else</span> <span class="k">return</span> <span class="s">"First parameter didn't match!"</span><span class="p">;</span>
@@ -602,7 +602,7 @@
         <span class="c1">// To return complex types, they should first be converted
 </span>        <span class="c1">// into builtin types (e.g. JSON.net types like JObject, JArray, etc. or builtin
 </span>        <span class="c1">// collections like System.Collections.Generic.Dictionary)
-</span>        <span class="k">public</span> <span class="n">JObject</span> <span class="nf">ReturnObject</span><span class="p">()</span>
+</span>        <span class="n">JObject</span> <span class="nf">ReturnObject</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="n">var</span> <span class="n">myObject</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JObject</span><span class="p">();</span>
             <span class="n">myObject</span><span class="p">[</span><span class="s">"key"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"value"</span><span class="p">;</span>
@@ -611,7 +611,7 @@
         <span class="p">}</span>
 
         <span class="c1">// Plugin methods don't have to return something
-</span>        <span class="k">public</span> <span class="k">void</span> <span class="nf">SendMessage</span><span class="p">()</span>
+</span>        <span class="k">void</span> <span class="nf">SendMessage</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="nf">Puts</span><span class="p">(</span><span class="s">"You just called the 'SendMessage' method!"</span><span class="p">);</span>
         <span class="p">}</span>
@@ -619,11 +619,11 @@
 <span class="p">}</span>
 </code></pre>
 
-<p>Exposing an API method allows other plugins to call that method.</p>
+<p>Exposing a plugin&rsquo;s method allows other plugins to call that method.</p>
 
-<p>For example, you could write a plugin that does some player management, then allow other plugins to &ldquo;query&rdquo; it via an API method to get a list of players who have certain privileges set in the original plugin.</p>
+<p>For example, you could write a plugin that does some player management, then allow other plugins to &ldquo;query&rdquo; it to get a list of players who have certain privileges set in the original plugin.</p>
 
-<h2 id="calling-an-api-method">Calling an API method</h2>
+<h2 id="calling-a-plugin-39-s-method">Calling a plugin&rsquo;s method</h2>
 <pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"SecondEpicStuff"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)]</span>
@@ -648,7 +648,7 @@
             <span class="p">}</span>
         <span class="p">}</span>
 
-        <span class="k">void</span> <span class="nf">CallApi</span><span class="p">()</span>
+        <span class="k">void</span> <span class="nf">CallPlugin</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="c1">// Plugin methods return objects, so cast the API call to the type
 </span>            <span class="c1">// you're expecting
@@ -667,7 +667,7 @@
 <span class="p">}</span>
 </code></pre>
 
-<p>Calling an API method allows you to access results from another plugin.</p>
+<p>Calling a plugin&rsquo;s method allows you to access results from another plugin.</p>
 
       </div>
       <div class="dark-box">
