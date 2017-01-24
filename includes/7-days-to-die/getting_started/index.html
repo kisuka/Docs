@@ -47,46 +47,14 @@
         <h1 id="getting-started">Getting Started</h1>
 <pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
-    <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicStuff"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)]</span>
     <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"Makes epic stuff happen"</span><span class="p">)]</span>
 
-    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">SevenDaysPlugin</span>
+    <span class="k">class</span> <span class="nc">EpicStuff</span> <span class="p">:</span> <span class="n">SevenDaysPlugin</span>
     <span class="p">{</span>
         <span class="c1">// The rest of the code and magic
 </span>    <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-<pre class="highlight lua"><code><span class="n">PLUGIN</span><span class="p">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s2">"EpicPlugin"</span>
-<span class="n">PLUGIN</span><span class="p">.</span><span class="n">Author</span> <span class="o">=</span> <span class="s2">"Unknown"</span>
-<span class="n">PLUGIN</span><span class="p">.</span><span class="n">Version</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">PLUGIN</span><span class="p">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s2">"Makes epic stuff happen"</span>
-
-<span class="c1">-- The rest of the code and magic</span>
-</code></pre>
-<pre class="highlight coffeescript"><code><span class="na">Title</span><span class="o">:</span> <span class="s">"EpicPlugin"</span>
-<span class="na">Author</span><span class="o">:</span> <span class="s">"Unknown"</span>
-<span class="na">Version</span><span class="o">:</span> <span class="nx">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="na">Description</span><span class="o">:</span> <span class="s">"Makes epic stuff happen"</span>
-
-<span class="c1"># The rest of the code and magic
-</span></code></pre>
-<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">EpicPlugin</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">Title</span> <span class="p">:</span> <span class="s2">"EpicPlugin"</span><span class="p">,</span>
-  <span class="na">Author</span> <span class="p">:</span> <span class="s2">"Unknown"</span><span class="p">,</span>
-  <span class="na">Version</span> <span class="p">:</span> <span class="nx">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-  <span class="na">Description</span> <span class="p">:</span> <span class="s2">"Makes epic stuff happen"</span><span class="p">,</span>
-
-  <span class="c1">// The rest of the code and magic</span>
-<span class="p">}</span>
-</code></pre>
-<pre class="highlight python"><code><span class="k">class</span> <span class="nc">EpicPlugin</span><span class="p">:</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"EpicPlugin"</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Author</span> <span class="o">=</span> <span class="s">"Unknown"</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s">"Makes epic stuff happen"</span>
-
-  <span class="c"># The rest of the code and magic</span>
 </code></pre>
 
 <p>The Title variable is what defines your plugin. This should be a unique codename or short description such as Pets.</p>
