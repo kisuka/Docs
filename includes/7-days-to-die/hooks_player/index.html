@@ -47,7 +47,7 @@
         <h1 id="player-hooks">Player Hooks</h1>
 
 <h2 id="onplayerconnected">OnPlayerConnected</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">info</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">client</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerConnected works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -59,7 +59,7 @@
 </ul>
 
 <h2 id="onplayerdisconnected">OnPlayerDisconnected</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerDisconnected</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">info</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerDisconnected</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">client</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerDisconnected works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -71,7 +71,7 @@
 </ul>
 
 <h2 id="onplayerchat">OnPlayerChat</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">client</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerChat works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -83,7 +83,7 @@
 </ul>
 
 <h2 id="onplayerrespawned">OnPlayerRespawned</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerRespawned</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">info</span><span class="p">,</span> <span class="kt">string</span> <span class="n">reason</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerRespawned</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">client</span><span class="p">,</span> <span class="kt">string</span> <span class="n">reason</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerRespawned works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -95,7 +95,7 @@
 </ul>
 
 <h2 id="onexperiencegained">OnExperienceGained</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnExperienceGained</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">info</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">exp</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnExperienceGained</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">client</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">exp</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnExperienceGained works!"</span><span class="p">);</span>
 <span class="p">}</span>
