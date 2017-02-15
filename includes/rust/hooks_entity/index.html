@@ -169,6 +169,30 @@
 <li>No return behavior</li>
 </ul>
 
+<h2 id="onturretshutdown">OnTurretShutdown</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretShutdown</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretShutdown works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an autoturret shutsdown</li>
+<li>Returning true overrides default behavior</li>
+</ul>
+
+<h2 id="onturretstartup">OnTurretStartup</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretStartup</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretStartup works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an autoturret starts up</li>
+<li>Returning true overrides default behavior</li>
+</ul>
+
 <h2 id="onturrettarget">OnTurretTarget</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretTarget</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">)</span>
 <span class="p">{</span>
@@ -178,6 +202,18 @@
 
 <ul>
 <li>Called when an autoturret attempts to target an entity</li>
+<li>Returning true overrides default behavior</li>
+</ul>
+
+<h2 id="onturrettoggle">OnTurretToggle</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretToggle</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretToggle works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an autoturret toggles powerstate (on/off)</li>
 <li>Returning true overrides default behavior</li>
 </ul>
 

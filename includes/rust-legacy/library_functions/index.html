@@ -83,16 +83,17 @@
 <p><code class="prettyprint">rust.FindPlayer(string nameOrSteamIdOrIp)</code></p>
 
 <h2 id="privatebindingflag">PrivateBindingFlag</h2>
-<pre class="highlight csharp"><code><span class="n">This</span> <span class="n">should</span> <span class="n">not</span> <span class="n">be</span> <span class="n">used</span> <span class="k">in</span> <span class="n">C</span><span class="err">#</span> <span class="n">plugins</span><span class="p">,</span> <span class="n">Reflection</span> <span class="n">should</span> <span class="n">be</span> <span class="n">used</span> <span class="n">instead</span>
+<pre class="highlight csharp"><code><span class="n">rust</span><span class="p">.</span><span class="nf">PrivateBindingFlag</span><span class="p">()</span>
+</code></pre>
 
-<span class="n">Used</span> <span class="n">to</span> <span class="k">get</span><span class="p">/</span><span class="k">set</span> <span class="k">private</span> <span class="n">methods</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">and</span> <span class="n">properties</span> <span class="n">through</span> <span class="n">Reflection</span><span class="p">.</span>
+<p>This should not be used in C# plugins, Reflection should be used instead</p>
 
-<span class="err">`</span><span class="n">rust</span><span class="p">.</span><span class="nf">PrivateBindingFlag</span><span class="p">()</span><span class="err">`</span>
+<p>Used to get/set private methods, fields, and properties through Reflection.</p>
 
-<span class="err">##</span> <span class="n">QuoteSafe</span>
+<p><code class="prettyprint">rust.PrivateBindingFlag()</code></p>
 
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="n">var</span> <span class="n">message</span> <span class="p">=</span> <span class="s">"Use /kick \"playername\" to kick player"</span><span class="p">;</span>
+<h2 id="quotesafe">QuoteSafe</h2>
+<pre class="highlight csharp"><code><span class="n">var</span> <span class="n">message</span> <span class="p">=</span> <span class="s">"Use /kick \"playername\" to kick player"</span><span class="p">;</span>
 <span class="n">message</span><span class="p">.</span><span class="nf">QuoteSafe</span><span class="p">();</span>
 </code></pre>
 

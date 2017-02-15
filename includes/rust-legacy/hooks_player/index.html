@@ -51,106 +51,117 @@
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnUserApprove works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Returning</span> <span class="k">true</span> <span class="n">overrides</span> <span class="k">default</span> <span class="n">behavior</span><span class="p">,</span> <span class="n">plugin</span> <span class="n">should</span> <span class="n">call</span> <span class="n">approval</span><span class="p">.</span><span class="n">Deny</span> <span class="k">if</span> <span class="n">it</span> <span class="n">does</span> <span class="k">this</span>
+<ul>
+<li>Returning true overrides default behavior, plugin should call approval.Deny if it does this</li>
+</ul>
 
-<span class="err">##</span> <span class="n">CanClientLogin</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">CanClientLogin</span><span class="p">(</span><span class="n">ClientConnection</span> <span class="n">connection</span><span class="p">,</span> <span class="n">uLink</span><span class="p">.</span><span class="n">NetworkPlayerApproval</span> <span class="n">approval</span><span class="p">)</span>
+<h2 id="canclientlogin">CanClientLogin</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanClientLogin</span><span class="p">(</span><span class="n">ClientConnection</span> <span class="n">connection</span><span class="p">,</span> <span class="n">uLink</span><span class="p">.</span><span class="n">NetworkPlayerApproval</span> <span class="n">approval</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanClientLogin works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Returning</span> <span class="n">a</span> <span class="n">uLink</span><span class="p">.</span><span class="n">NetworkConnectionError</span> <span class="n">will</span> <span class="n">reject</span> <span class="n">the</span> <span class="n">connection</span><span class="p">,</span> <span class="n">returning</span> <span class="n">anything</span> <span class="k">else</span> <span class="n">will</span> <span class="n">allow</span> <span class="n">the</span> <span class="n">connection</span>
+<ul>
+<li>Returning a uLink.NetworkConnectionError will reject the connection, returning anything else will allow the connection</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerConnected</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">)</span>
+<h2 id="onplayerconnected">OnPlayerConnected</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerConnected works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Called</span> <span class="n">before</span> <span class="n">the</span> <span class="n">player</span> <span class="kt">object</span> <span class="k">is</span> <span class="n">created</span><span class="p">,</span> <span class="n">but</span> <span class="n">after</span> <span class="n">the</span> <span class="n">player</span> <span class="n">has</span> <span class="n">been</span> <span class="n">approved</span>
- <span class="p">*</span> <span class="n">No</span> <span class="k">return</span> <span class="n">behavior</span>
+<ul>
+<li>Called before the player object is created, but after the player has been approved</li>
+<li>No return behavior</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerDisconnected</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerDisconnected</span><span class="p">(</span><span class="n">uLink</span><span class="p">.</span><span class="n">NetworkPlayer</span> <span class="n">networkPlayer</span><span class="p">)</span>
+<h2 id="onplayerdisconnected">OnPlayerDisconnected</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerDisconnected</span><span class="p">(</span><span class="n">uLink</span><span class="p">.</span><span class="n">NetworkPlayer</span> <span class="n">networkPlayer</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerDisconnected works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Called</span> <span class="n">after</span> <span class="n">the</span> <span class="n">player</span> <span class="n">has</span> <span class="n">disconnected</span> <span class="n">from</span> <span class="n">the</span> <span class="n">server</span>
- <span class="p">*</span> <span class="n">No</span> <span class="k">return</span> <span class="n">behavior</span>
+<ul>
+<li>Called after the player has disconnected from the server</li>
+<li>No return behavior</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerSpawn</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">PlayerClient</span> <span class="n">client</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">usecamp</span><span class="p">,</span> <span class="n">RustProto</span><span class="p">.</span><span class="n">Avatar</span> <span class="n">avatar</span><span class="p">)</span>
+<h2 id="onplayerspawn">OnPlayerSpawn</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">PlayerClient</span> <span class="n">client</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">usecamp</span><span class="p">,</span> <span class="n">RustProto</span><span class="p">.</span><span class="n">Avatar</span> <span class="n">avatar</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerSpawn works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">player</span> <span class="n">spawns</span>
- <span class="p">*</span> <span class="n">No</span> <span class="k">return</span> <span class="n">behavior</span>
+<ul>
+<li>Called when the player spawns</li>
+<li>No return behavior</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerChat</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+<h2 id="onplayerchat">OnPlayerChat</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerChat works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">player</span> <span class="n">sends</span> <span class="n">chat</span> <span class="n">to</span> <span class="n">the</span> <span class="n">server</span>
- <span class="p">*</span> <span class="n">Returning</span> <span class="k">true</span> <span class="n">overrides</span> <span class="k">default</span> <span class="n">behavior</span> <span class="n">of</span> <span class="n">chat</span><span class="p">,</span> <span class="n">not</span> <span class="n">commands</span>
+<ul>
+<li>Called when the player sends chat to the server</li>
+<li>Returning true overrides default behavior of chat, not commands</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnPlayerVoice</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnPlayerVoice</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">uLink</span><span class="p">.</span><span class="n">NetworkPlayer</span><span class="p">&gt;</span> <span class="n">players</span><span class="p">)</span>
+<h2 id="onplayervoice">OnPlayerVoice</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerVoice</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">uLink</span><span class="p">.</span><span class="n">NetworkPlayer</span><span class="p">&gt;</span> <span class="n">players</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerVoice works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">player</span> <span class="n">uses</span> <span class="k">in</span><span class="p">-</span><span class="n">game</span> <span class="n">voice</span> <span class="n">communication</span>
+<ul>
+<li>Called when the player uses in-game voice communication</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnItemCraft</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnItemCraft</span><span class="p">(</span><span class="n">CraftingInventory</span> <span class="n">inventory</span><span class="p">,</span> <span class="n">BlueprintDataBlock</span> <span class="n">blueprint</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">,</span> <span class="kt">ulong</span> <span class="n">startTime</span><span class="p">)</span>
+<h2 id="onitemcraft">OnItemCraft</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemCraft</span><span class="p">(</span><span class="n">CraftingInventory</span> <span class="n">inventory</span><span class="p">,</span> <span class="n">BlueprintDataBlock</span> <span class="n">blueprint</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">,</span> <span class="kt">ulong</span> <span class="n">startTime</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemCraft works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">player</span> <span class="n">starts</span> <span class="n">crafting</span> <span class="n">an</span> <span class="n">item</span>
- <span class="p">*</span> <span class="n">Returning</span> <span class="k">true</span> <span class="n">overrides</span> <span class="k">default</span> <span class="n">behavior</span>
+<ul>
+<li>Called when the player starts crafting an item</li>
+<li>Returning true overrides default behavior</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnBlueprintUse</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnBlueprintUse</span><span class="p">(</span><span class="n">BlueprintDataBlock</span> <span class="n">blueprint</span><span class="p">,</span> <span class="n">IBlueprintItem</span> <span class="n">item</span><span class="p">)</span>
+<h2 id="onblueprintuse">OnBlueprintUse</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnBlueprintUse</span><span class="p">(</span><span class="n">BlueprintDataBlock</span> <span class="n">blueprint</span><span class="p">,</span> <span class="n">IBlueprintItem</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnBlueprintUse works!"</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre>
 
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">player</span> <span class="n">tries</span> <span class="n">to</span> <span class="n">study</span> <span class="n">a</span> <span class="n">blueprint</span>
- <span class="p">*</span> <span class="n">Returning</span> <span class="k">true</span> <span class="n">overrides</span> <span class="k">default</span> <span class="n">behavior</span>
+<ul>
+<li>Called when the player tries to study a blueprint</li>
+<li>Returning true overrides default behavior</li>
+</ul>
 
-<span class="err">##</span> <span class="n">OnResearchItem</span>
-
-<span class="err">```</span> <span class="n">csharp</span>
-<span class="k">void</span> <span class="nf">OnResearchItem</span><span class="p">(</span><span class="n">ResearchToolItem</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">item</span><span class="p">,</span> <span class="n">IInventoryItem</span> <span class="n">otherItem</span><span class="p">)</span>
+<h2 id="onresearchitem">OnResearchItem</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnResearchItem</span><span class="p">(</span><span class="n">ResearchToolItem</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">item</span><span class="p">,</span> <span class="n">IInventoryItem</span> <span class="n">otherItem</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnResearchItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
-
- <span class="p">*</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">player</span> <span class="n">tries</span> <span class="n">to</span> <span class="n">research</span> <span class="n">an</span> <span class="n">item</span>
- <span class="p">*</span> <span class="n">Returning</span> <span class="n">a</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">MergeResult</span> <span class="n">will</span> <span class="n">cancel</span> <span class="k">default</span> <span class="n">behavior</span>
 </code></pre>
+
+<ul>
+<li>Called when the player tries to research an item</li>
+<li>Returning a InventoryItem.MergeResult will cancel default behavior</li>
+</ul>
 
       </div>
       <div class="dark-box">
