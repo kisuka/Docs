@@ -46,6 +46,18 @@
       <div class="content">
         <h1 id="entity-hooks">Entity Hooks</h1>
 
+<h2 id="canhelicopterstrafetarget">CanHelicopterStrafeTarget</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanHelicopterStrafeTarget</span><span class="p">(</span><span class="n">PatrolHelicopterAI</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">target</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanHelicopterStrafeTarget works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a helicopter targets a player to attack while strafing</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
 <h2 id="cannetworkto">CanNetworkTo</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNetworkTo</span><span class="p">(</span><span class="n">BaseNetworkable</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
@@ -55,11 +67,59 @@
 
 <ul>
 <li>Called when an entity attempts to network with a player</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
+<h2 id="cannpcattack">CanNpcAttack</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcAttack</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcAttack works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a NPC attempts to attack another entity</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
+<h2 id="cannpcfear">CanNpcFear</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanNpcFear</span><span class="p">(</span><span class="n">BaseNPC</span> <span class="n">npc</span><span class="p">,</span> <span class="n">BaseCombatEntity</span> <span class="n">target</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanNpcFear works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a NPC attempts to run away from another entity</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
+<h2 id="canpickupentity">CanPickupEntity</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanPickupEntity</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanPickupEntity works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player attempts to pickup a deployed entity (BearTrap, DecorDeployable, Door, ReactiveTarget, SleepingBag, SpinnerWheel)</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
+<h2 id="canrecycle">CanRecycle</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanRecycle</span><span class="p">(</span><span class="n">Recycler</span> <span class="n">recycler</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanRecycle works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the recycler attempts to recycle an item</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="onairdrop">OnAirdrop</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnAirdrop</span><span class="p">(</span><span class="n">CargoPlane</span> <span class="n">plane</span><span class="p">,</span> <span class="n">Vector3</span> <span class="n">location</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnAirdrop</span><span class="p">(</span><span class="n">CargoPlane</span> <span class="n">plane</span><span class="p">,</span> <span class="n">Vector3</span> <span class="n">dropPosition</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnAirdrop works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -91,7 +151,7 @@
 </code></pre>
 
 <ul>
-<li>Called when an entity enters an area/zone (building privilege zone, water area, radiation zone, hurt zone, etc.)</li>
+<li>Called when an entity enters a trigger (building privilege zone, water area, radiation zone, hurt zone, etc.)</li>
 <li>No return behavior</li>
 </ul>
 
@@ -104,7 +164,19 @@
 
 <ul>
 <li>Called when an entity (sleepingbag, sign, furnace,&hellip;) is going to be destroyed because the buildingblock it is on was removed</li>
-<li>Returning true overides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onentitykill">OnEntityKill</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnEntityKill</span><span class="p">(</span><span class="n">BaseNetworkable</span> <span class="n">entity</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnEntityKill works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an entity is destroyed</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="onentityleave">OnEntityLeave</h2>
@@ -115,7 +187,7 @@
 </code></pre>
 
 <ul>
-<li>Called when an entity leaves an area/zone (building privilege zone, water area, radiation zone, hurt zone, etc.)</li>
+<li>Called when an entity leaves a trigger (building privilege zone, water area, radiation zone, hurt zone, etc.)</li>
 <li>No return behavior</li>
 </ul>
 
@@ -157,6 +229,42 @@
 <li>Returning true overrides default behavior</li>
 </ul>
 
+<h2 id="onoventoggle">OnOvenToggle</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnOvenToggle</span><span class="p">(</span><span class="n">BaseOven</span> <span class="n">oven</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnOvenToggle works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an oven (Campfire, Furnace,&hellip;) is turned on or off</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onrecycleitem">OnRecycleItem</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnRecycleItem</span><span class="p">(</span><span class="n">Recycler</span> <span class="n">recycler</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnRecycleItem works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an item is recycled in a recycler</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onrecyclertoggle">OnRecyclerToggle</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnRecyclerToggle</span><span class="p">(</span><span class="n">Recycler</span> <span class="n">recycler</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnRecyclerToggle works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a recycler is turned on or off</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="onresourcedepositcreated">OnResourceDepositCreated</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnResourceDepositCreated</span><span class="p">(</span><span class="n">ResourceDepositManager</span><span class="p">.</span><span class="n">ResourceDeposit</span> <span class="n">deposit</span><span class="p">)</span>
 <span class="p">{</span>
@@ -169,6 +277,30 @@
 <li>No return behavior</li>
 </ul>
 
+<h2 id="onturretauthorize">OnTurretAuthorize</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretAuthorize</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretAuthorize works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player is authorized on a turret</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onturretdeauthorize">OnTurretDeauthorize</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretShutdown</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnTurretDeauthorize works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player is deauthorized on a turret</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="onturretshutdown">OnTurretShutdown</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTurretShutdown</span><span class="p">(</span><span class="n">AutoTurret</span> <span class="n">turret</span><span class="p">)</span>
 <span class="p">{</span>
@@ -178,7 +310,7 @@
 
 <ul>
 <li>Called when an autoturret shutsdown</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onturretstartup">OnTurretStartup</h2>
@@ -190,7 +322,7 @@
 
 <ul>
 <li>Called when an autoturret starts up</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onturrettarget">OnTurretTarget</h2>
@@ -202,7 +334,7 @@
 
 <ul>
 <li>Called when an autoturret attempts to target an entity</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onturrettoggle">OnTurretToggle</h2>
@@ -214,7 +346,7 @@
 
 <ul>
 <li>Called when an autoturret toggles powerstate (on/off)</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
       </div>

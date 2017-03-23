@@ -58,30 +58,6 @@
 <li>Returning true overrides default behavior</li>
 </ul>
 
-<h2 id="canlocksign">CanLockSign</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanLockSign</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">Signage</span> <span class="n">sign</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanLockSign works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when the player attempts to lock a sign</li>
-<li>Returning true overrides default behavior</li>
-</ul>
-
-<h2 id="canunlocksign">CanUnlockSign</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUnlockSign</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">Signage</span> <span class="n">sign</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUnlockSign works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when the player attempts to unlock a sign</li>
-<li>Returning true overrides default behavior</li>
-</ul>
-
 <h2 id="onsignlocked">OnSignLocked</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnSignLocked</span><span class="p">(</span><span class="n">Signage</span> <span class="n">sign</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
@@ -92,18 +68,6 @@
 <ul>
 <li>Called after the player has locked a sign</li>
 <li>No return behavior</li>
-</ul>
-
-<h2 id="onsignupdate">OnSignUpdate</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnSignUpdate</span><span class="p">(</span><span class="n">Signage</span> <span class="n">sign</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnSignUpdate works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when the player attempts to update a sign</li>
-<li>Returning true cancels the default behavior</li>
 </ul>
 
 <h2 id="onsignupdated">OnSignUpdated</h2>

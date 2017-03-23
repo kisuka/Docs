@@ -55,43 +55,31 @@
 
 <ul>
 <li>Called when attempting to put an item in a container</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning a CanAcceptResult enum value overrides default behavior</li>
 </ul>
 
-<h2 id="onblueprintreveal">OnBlueprintReveal</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnBlueprintReveal</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<h2 id="canmoveitem">CanMoveItem</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanMoveItem</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">PlayerInventory</span> <span class="n">playerLoot</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">targetContainer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">targetSlot</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnBlueprintReveal works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanMoveItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when the player attempts to reveal a blueprint</li>
-<li>Returning true overrides default behavior</li>
+<li>Called when moving an item from one inventory slot to another</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
-<h2 id="onblueprintrevealed">OnBlueprintRevealed</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnBlueprintRevealed</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">Item</span> <span class="n">revealed</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<h2 id="canstackitem">CanStackItem</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanStackItem</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">Item</span> <span class="n">targetItem</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnBlueprintRevealed works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanStackItem works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when the player has revealed a blueprint</li>
-<li>No return behavior</li>
-</ul>
-
-<h2 id="onconsumableuse">OnConsumableUse</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnConsumableUse</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnConsumableUse works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called right after a consumable item is used</li>
-<li>No return behavior</li>
+<li>Called when moving an item onto another item</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="onconsumefuel">OnConsumeFuel</h2>
@@ -106,16 +94,16 @@
 <li>No return behavior</li>
 </ul>
 
-<h2 id="ondispensergather">OnDispenserGather</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnDispenserGather</span><span class="p">(</span><span class="n">ResourceDispenser</span> <span class="n">dispenser</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<h2 id="onfindburnable">OnFindBurnable</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnFindBurnable</span><span class="p">(</span><span class="n">BaseOven</span> <span class="n">oven</span><span class="p">,</span> <span class="n">Item</span> <span class="n">fuel</span><span class="p">,</span> <span class="n">ItemModBurnable</span> <span class="n">burnable</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnDispenserGather works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnFindBurnable works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called before the player is given items from a resource</li>
-<li>No return behavior</li>
+<li>Called when looking for fuel for the oven</li>
+<li>Returning an item overrides default behavior</li>
 </ul>
 
 <h2 id="onhealingitemuse">OnHealingItemUse</h2>
@@ -127,7 +115,19 @@
 
 <ul>
 <li>Called right before a Syringe or Medkit item is used</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onitemaction">OnItemAction</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemAction</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="kt">string</span> <span class="n">action</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemAction works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a button is clicked on an item in the inventory (drop, unwrap, &hellip;)</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onitemaddedtocontainer">OnItemAddedToContainer</h2>
@@ -152,7 +152,7 @@
 
 <ul>
 <li>Called right after an item is added to the crafting queue</li>
-<li>Return an ItemCraftTask object to modify behavior or outcome</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="onitemcraftcancelled">OnItemCraftCancelled</h2>
@@ -164,7 +164,7 @@
 
 <ul>
 <li>Called before an item has been crafted</li>
-<li>Returning true overrides default behavior</li>
+<li>No return behavior</li>
 </ul>
 
 <h2 id="onitemcraftfinished">OnItemCraftFinished</h2>
@@ -191,15 +191,52 @@
 <li>No return behavior</li>
 </ul>
 
-<h2 id="oncollectiblepickup">OnCollectiblePickup</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCollectiblePickup</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<h2 id="onitemdropped">OnItemDropped</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemDropped</span><span class="p">(</span><span class="n">Deployer</span> <span class="n">deployer</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCollectiblePickup works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemDropped works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when the player collects an item</li>
+<li>Called right after an item has been dropped</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onitempickup">OnItemPickup</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemPickup</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemPickup works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called right after an item has been picked up</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onitemremovedfromcontainer">OnItemRemovedFromContainer</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemRemovedFromContainer</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemRemovedFromContainer works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called right after an item was removed from a container</li>
+<li>The entire stack has to be removed for this to be called, not just a little bit</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onitemrepair">OnItemRepair</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemRepair</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemRepair works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called right after an item has been picked up</li>
 <li>No return behavior</li>
 </ul>
 
@@ -212,7 +249,7 @@
 
 <ul>
 <li>Called right before a player begins to research an item</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onitemresearchend">OnItemResearchEnd</h2>
@@ -240,19 +277,6 @@
 <li>No return behavior</li>
 </ul>
 
-<h2 id="onitemremovedfromcontainer">OnItemRemovedFromContainer</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemRemovedFromContainer</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemRemovedFromContainer works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called right after an item was removed from a container</li>
-<li>The entire stack has to be removed for this to be called, not just a little bit</li>
-<li>No return behavior</li>
-</ul>
-
 <h2 id="onitemsplit">OnItemSplit</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemSplit</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
 <span class="p">{</span>
@@ -262,7 +286,7 @@
 
 <ul>
 <li>Called right before an item is split into multiple stacks</li>
-<li>No return behavior</li>
+<li>Returning an item overrides default behavior</li>
 </ul>
 
 <h2 id="onitemupgrade">OnItemUpgrade</h2>
@@ -274,6 +298,18 @@
 
 <ul>
 <li>Called right before an item is upgraded</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onitemuse">OnItemUse</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemUse</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amountToUse</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemUse works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when an item is used</li>
 <li>No return behavior</li>
 </ul>
 
@@ -289,54 +325,6 @@
 <li>No return behavior</li>
 </ul>
 
-<h2 id="oncropgather">OnCropGather</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCropGather</span><span class="p">(</span><span class="n">PlantEntity</span> <span class="n">plant</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCropGather works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when the player gathers a plant</li>
-<li>No return behavior</li>
-</ul>
-
-<h2 id="onquarryenabled">OnQuarryEnabled</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnQuarryEnabled</span><span class="p">(</span><span class="n">MiningQuarry</span> <span class="n">quarry</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnQuarryEnabled works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when a mining quarry is turned on/enabled</li>
-<li>No return behavior</li>
-</ul>
-
-<h2 id="onquarrygather">OnQuarryGather</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnQuarryGather</span><span class="p">(</span><span class="n">MiningQuarry</span> <span class="n">quarry</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnQuarryGather works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called before items are gathered from a quarry</li>
-<li>No return behavior</li>
-</ul>
-
-<h2 id="onsurveygather">OnSurveyGather</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnSurveyGather</span><span class="p">(</span><span class="n">SurveyCharge</span> <span class="n">survey</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnSurveyGather works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called before items are gathered from a survey charge</li>
-<li>No return behavior</li>
-</ul>
-
 <h2 id="ontraparm">OnTrapArm</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnTrapArm</span><span class="p">(</span><span class="n">BearTrap</span> <span class="n">trap</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
@@ -346,7 +334,7 @@
 
 <ul>
 <li>Called when the player arms a bear trap</li>
-<li>No return behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="ontrapdisarm">OnTrapDisarm</h2>
@@ -358,7 +346,7 @@
 
 <ul>
 <li>Called when the player disarms a land mine</li>
-<li>No return behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="ontrapsnapped">OnTrapSnapped</h2>
@@ -382,7 +370,7 @@
 
 <ul>
 <li>Called when a trap is triggered by a game object</li>
-<li>No return behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
       </div>

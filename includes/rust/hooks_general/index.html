@@ -55,7 +55,43 @@
 
 <ul>
 <li>Useful for intercepting server messages before they get to their intended target</li>
-<li>Return true to override the default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onnewsave">OnNewSave</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnNewSave</span><span class="p">(</span><span class="kt">string</span> <span class="n">filename</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnNewSave works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a new savefile is created</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onrconconnection">OnRconConnection</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnRconConnection</span><span class="p">(</span><span class="n">IPEndPoint</span> <span class="n">ip</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnRconConnection works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a new RCon connection is opened</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="onsaveload">OnSaveLoad</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnSaveLoad</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">BaseEntity</span><span class="p">,</span> <span class="n">Entity</span><span class="p">&gt;</span> <span class="n">entities</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnSaveLoad works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a savefile is loaded</li>
+<li>Returning true or false overrides default behavior</li>
 </ul>
 
 <h2 id="onservercommand">OnServerCommand</h2>

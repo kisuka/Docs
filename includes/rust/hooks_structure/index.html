@@ -46,6 +46,18 @@
       <div class="content">
         <h1 id="structure-hooks">Structure Hooks</h1>
 
+<h2 id="canassignbed">CanAssignBed</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanAssignBed</span><span class="p">(</span><span class="n">SleepingBag</span> <span class="n">bag</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">ulong</span> <span class="n">targetPlayerId</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanAssignBed works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player attempts to assign a bed or sleepingbag to another player</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="canbuild">CanBuild</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanBuild</span><span class="p">(</span><span class="n">Planner</span> <span class="n">plan</span><span class="p">,</span> <span class="n">Construction</span> <span class="n">prefab</span><span class="p">)</span>
 <span class="p">{</span>
@@ -55,43 +67,91 @@
 
 <ul>
 <li>Called when the player tries to build something</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
-<h2 id="canuselock">CanUseLock</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseLock</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseLock</span> <span class="n">@lock</span><span class="p">)</span>
+<h2 id="canchangecode">CanChangeCode</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanChangeCode</span><span class="p">(</span><span class="n">CodeLock</span> <span class="n">codeLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">newCode</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isGuestCode</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseLock works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanChangeCode works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when the player tries to use a locked entity</li>
-<li>Returning true bypasses lock handling, nothing will by default will allow normal handling, returning anything else will reject lock usage</li>
+<li>Called when a player tries to change the code on a codelock</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
-<h2 id="canuselock">CanUseLock</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseLock</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">CodeLock</span> <span class="n">@lock</span><span class="p">)</span>
+<h2 id="canlock">CanLock</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanLock</span><span class="p">(</span><span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseLock works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanLock works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when the player tries to use a door with a code lock</li>
-<li>Returning true allows door usage, nothing will by default will allow door usage, returning anything else will reject door usage</li>
+<li>Called when the player tries to lock a keylock or codelock</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
-<h2 id="canuselock">CanUseLock</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseLock</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">KeyLock</span> <span class="n">@lock</span><span class="p">)</span>
+<h2 id="cansetbedpublic">CanSetBedPublic</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanSetBedPublic</span><span class="p">(</span><span class="n">SleepingBag</span> <span class="n">bed</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseLock works!"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanSetBedPublic works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
 <ul>
-<li>Called when the player tries to use a door with a key lock</li>
-<li>Returning true allows door usage, nothing will by default will allow door usage, returning anything else will reject door usage</li>
+<li>Called when a player tries to set a bed public</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="canunlock">CanUnlock</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUnlock</span><span class="p">(</span><span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUnlock works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player tries to unlock a keylock or codelock</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="canuselockedentity">CanUseLockedEntity</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanUseLockedEntity</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanUseLockedEntity works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player tries to use an entity that is locked</li>
+<li>Returning true or false overrides default behavior</li>
+</ul>
+
+<h2 id="oncodeentered">OnCodeEntered</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCodeEntered</span><span class="p">(</span><span class="n">CodeLock</span> <span class="n">codeLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">code</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCodeEntered works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when the player has entered a code in a codelock</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="oncupboardauthorize">OnCupboardAuthorize</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCupboardAuthorize</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCupboardAuthorize works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a cupboard attempts to authorize a player</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="oncupboardclearlist">OnCupboardClearList</h2>
@@ -103,7 +163,19 @@
 
 <ul>
 <li>Called when an attempt is made to clear a cupboard authorized list</li>
-<li>Returning true overrides default behavior</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="oncupboarddeauthorize">OnCupboardDeauthorize</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCupboardDeauthorize</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCupboardDeauthorize works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a cupboard attempts to deauthorize a player</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="ondoorclosed">OnDoorClosed</h2>
@@ -128,30 +200,6 @@
 <ul>
 <li>Called when the player opened a door</li>
 <li>No return behavior</li>
-</ul>
-
-<h2 id="oncupboardauthorize">OnCupboardAuthorize</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCupboardAuthorize</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCupboardAuthorize works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when a cupboard attempts to authorize a player</li>
-<li>Returning true cancels the authorization</li>
-</ul>
-
-<h2 id="oncupboarddeauthorize">OnCupboardDeauthorize</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnCupboardDeauthorize</span><span class="p">(</span><span class="n">BuildingPrivlidge</span> <span class="n">privilege</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnCupboardDeauthorize works!"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-<li>Called when a cupboard attempts to deauthorize a player</li>
-<li>Returning true cancels the deauthorization</li>
 </ul>
 
 <h2 id="onentitybuilt">OnEntityBuilt</h2>
@@ -187,7 +235,7 @@
 
 <ul>
 <li>Called when the player selects DemolishImmediate from the BuildingBlock or BaseCombatEntity menu</li>
-<li>Returning true overrides the demolition</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
 <h2 id="onstructurerepair">OnStructureRepair</h2>
@@ -223,7 +271,7 @@
 
 <ul>
 <li>Called when the player upgrades the grade of a BuildingBlock or BaseCombatEntity</li>
-<li>Returning true overrides the upgrade</li>
+<li>Returning a non-null value overrides default behavior</li>
 </ul>
 
       </div>
