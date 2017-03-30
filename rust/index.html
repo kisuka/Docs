@@ -1610,6 +1610,18 @@
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
+<h2 id="canhidestash">CanHideStash</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanHideStash</span><span class="p">(</span><span class="n">StashContainer</span> <span class="n">stash</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanHideStash works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player tries to hide a stash</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
 <h2 id="canlock">CanLock</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanLock</span><span class="p">(</span><span class="n">BaseLock</span> <span class="n">baseLock</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1619,6 +1631,18 @@
 
 <ul>
 <li>Called when the player tries to lock a keylock or codelock</li>
+<li>Returning a non-null value overrides default behavior</li>
+</ul>
+
+<h2 id="canseestash">CanSeeStash</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanSeeStash</span><span class="p">(</span><span class="n">StashContainer</span> <span class="n">stash</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanSeeStash works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+<li>Called when a player is looking at a hidden stash</li>
 <li>Returning a non-null value overrides default behavior</li>
 </ul>
 
