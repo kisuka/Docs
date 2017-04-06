@@ -351,7 +351,7 @@
           <h1 id="player-hooks">Player Hooks</h1>
 
 <h2 id="canattack">CanAttack</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanAttack</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span> 
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanAttack</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanAttack works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -363,7 +363,7 @@
 </ul>
 
 <h2 id="canbetargeted-autoturret">CanBeTargeted (autoturret)</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanBeTargeted</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">player</span><span class="p">,</span> <span class="n">MonoBehaviour</span> <span class="n">turret</span><span class="p">)</span> 
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanBeTargeted</span><span class="p">(</span><span class="n">BaseCombatEntity</span> <span class="n">player</span><span class="p">,</span> <span class="n">MonoBehaviour</span> <span class="n">turret</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanBeTargeted works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -375,7 +375,7 @@
 </ul>
 
 <h2 id="canbewounded">CanBeWounded</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanBeWounded</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">HitInfo</span> <span class="n">info</span><span class="p">)</span> 
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanBeWounded</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">HitInfo</span> <span class="n">info</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanBeWounded works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -436,7 +436,7 @@
 </ul>
 
 <h2 id="canlootplayer">CanLootPlayer</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanLootPlayer</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">target</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">looter</span><span class="p">)</span> 
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanLootPlayer</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">target</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">looter</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanLootPlayer works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -643,7 +643,7 @@
 </ul>
 
 <h2 id="onplayerland">OnPlayerLand</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerLand</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerLand</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">float</span> <span class="n">num</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerLand works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -655,7 +655,7 @@
 </ul>
 
 <h2 id="onplayerlanded">OnPlayerLanded</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerLanded</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerLanded</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">float</span> <span class="n">num</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerLanded works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1279,7 +1279,7 @@
 </ul>
 
 <h2 id="onitemdropped">OnItemDropped</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemDropped</span><span class="p">(</span><span class="n">Deployer</span> <span class="n">deployer</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemDropped</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">BaseEntity</span> <span class="n">entity</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemDropped works!"</span><span class="p">);</span>
 <span class="p">}</span>
